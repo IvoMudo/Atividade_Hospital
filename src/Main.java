@@ -28,11 +28,25 @@ public class Main {
         ruth.entrarNaSala(recepcao);
         madalena.entrarNaSala(recepcao);
 
+        //joao ira realizar cirurgia
         pedro.realizarAtendimento();
         maria.moverPaciente(joao, salaCirurgia);
         maria.realizarCirurgia(joao);
 
+        //lucas tem febre e ira se consultar
         pedro.realizarAtendimento();
+
+        jose.moverPaciente(lucas,salaDoMedico);
         lucas.adicionarSintomas(Sintomas.Febre);
+        jose.realizarDiagnostico(lucas);
+        System.out.println(lucas.getDoenca());
+
+        //madalena tem tosse e ira se consultar
+        madalena.adicionarSintomas(Sintomas.Tosse);
+
+        pedro.realizarAtendimento();
+        jose.moverPaciente(madalena,salaDoMedico);
+        jose.realizarDiagnostico(madalena);
+        System.out.println(madalena.getDoenca());
     }
 }

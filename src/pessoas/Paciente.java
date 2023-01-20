@@ -1,12 +1,13 @@
 package pessoas;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public final class Paciente extends Pessoa {
 
     private List<Sintomas> sintomas = new LinkedList<>();
-    private String doença;
+    private List<String> doenca = new LinkedList<>();
 
     public Paciente(String nome, int idade) {
         super(nome, idade);
@@ -28,7 +29,7 @@ public final class Paciente extends Pessoa {
             System.out.println("Somente um médico pode diagnosticar qual a sua doença.");
             return;
         }
-        doença = nomeDaDoenca;
+        doenca.add(nomeDaDoenca);
     }
 
     public List<Sintomas> getSintomas() {
@@ -36,8 +37,8 @@ public final class Paciente extends Pessoa {
     }
 
     public String getDoenca() {
-        return (doença == null || doença.isBlank() || doença.isEmpty())
+        return (doenca == null  || doenca.isEmpty())
                 ? "Doenca ainda não diagnosticada, procure um médico."
-                : doença;
+                : doenca.toString();
     }
 }
