@@ -1,10 +1,7 @@
 import lugares.Atendimento;
 import lugares.CentroCirurgico;
 import lugares.Consultorio;
-import pessoas.Funcionario;
-import pessoas.Paciente;
-import pessoas.Pessoa;
-import pessoas.Sintomas;
+import pessoas.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +9,7 @@ public class Main {
         CentroCirurgico salaCirurgia = new CentroCirurgico();
         Consultorio salaDoMedico = new Consultorio();
 
-        Pessoa maria = new Funcionario("maria",52,"89.154.196");
+        Pessoa maria = new Paciente("maria",52);
         maria.entrarNaSala(recepcao);
         System.out.println(maria.getOndeEsta());
         maria.entrarNaSala(salaCirurgia);

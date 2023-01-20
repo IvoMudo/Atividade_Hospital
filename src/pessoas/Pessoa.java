@@ -26,6 +26,7 @@ public abstract class Pessoa {
         }
     }
 
+    //Getters e Setters
     public String getNome() {
         return nome;
     }

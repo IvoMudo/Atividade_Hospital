@@ -5,7 +5,7 @@ import lugares.CentroCirurgico;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Cirurgiao extends Medico {
+public final class Cirurgiao extends Medico {
 
     public Cirurgiao(String nome, int idade, String cpf) {
         super(nome, idade, cpf);

@@ -1,6 +1,7 @@
 package lugares;
 
 import pessoas.Paciente;
+import pessoas.Pessoa;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -11,6 +12,12 @@ public class Atendimento extends Sala {
 
     public Atendimento() {
         super(false);
+    }
+
+    @Override
+    public boolean addPessoa(Pessoa pessoa) {
+        pessoasNaSala.add(pessoa);
+        return true;
     }
 
     public void adicionarNaFila(Paciente paciente) {
@@ -28,4 +35,5 @@ public class Atendimento extends Sala {
     public int getTamanhoFila() {
         return fila.size();
     }
+
 }

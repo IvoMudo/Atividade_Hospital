@@ -5,14 +5,17 @@ import pessoas.Pessoa;
 
 import java.util.Objects;
 
-public class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa {
+    //Atributos
     private String cpf;
 
+    //Construtor
     public Funcionario(String nome, int idade, String cpf) {
         super(nome, idade);
         this.cpf = cpf;
     }
 
+    //Métodos
     public void moverPaciente(Paciente paciente, Sala sala) {
         sala.addPessoa(this,paciente);
         this.entrarNaSala(sala);

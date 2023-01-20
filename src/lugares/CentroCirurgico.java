@@ -1,10 +1,10 @@
 package lugares;
 
 import pessoas.Cirurgiao;
+import pessoas.Funcionario;
 import pessoas.Pessoa;
 
 public class CentroCirurgico extends Sala {
-    private Cirurgiao cirurgiao;
     private boolean estaTendoCirurgia = false;
 
     public CentroCirurgico() {
@@ -13,7 +13,6 @@ public class CentroCirurgico extends Sala {
 
     public CentroCirurgico(Cirurgiao cirurgiao) {
         this();
-        this.cirurgiao = cirurgiao;
     }
 
     @Override
@@ -22,7 +21,12 @@ public class CentroCirurgico extends Sala {
             System.out.println("Está havendo uma cirurgia nessa sala, por favor não interrompa");
             return false;
         }
-        return super.addPessoa(pessoa);
+        if (pessoa instanceof Funcionario) {
+            pessoasNaSala.add(pessoa);
+            return true;
+        }
+        System.out.println("Essa sala tem acesso restrito, você não pode entrar aqui!");
+        return false;
     }
 
     public boolean getEstaTendoCirurgia() {
