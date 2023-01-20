@@ -9,7 +9,7 @@ import java.util.*;
 public abstract class Sala {
     //Atributos
     private boolean acessoRestrito;
-    private List<Pessoa> pessoasNaSala = new LinkedList<>();
+    protected List<Pessoa> pessoasNaSala = new LinkedList<>();
     private Set<LocalDate> diasReservados = new HashSet<>();
 
     //Construtor
@@ -18,18 +18,7 @@ public abstract class Sala {
     }
 
     //Métodos
-    public boolean addPessoa(Pessoa pessoa) { //adiciona pessoas na sala
-        if (!acessoRestrito) {
-            pessoasNaSala.add(pessoa);
-            return true;
-        }
-        if (pessoa instanceof Funcionario) {
-            pessoasNaSala.add(pessoa);
-            return true;
-        }
-        System.out.println("Essa sala tem acesso restrito, você não pode entrar aqui!");
-        return false;
-    }
+    public abstract boolean addPessoa(Pessoa pessoa);
     public void addPessoa(Funcionario funcionario,Paciente paciente){
         pessoasNaSala.add(paciente);
         pessoasNaSala.add(funcionario);

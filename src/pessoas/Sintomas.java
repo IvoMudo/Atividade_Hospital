@@ -2,7 +2,7 @@ package pessoas;
 
 public enum Sintomas {
     Febre,
-    Cansaço,
+    Enjoo,
     Tosse,
 
 }
